@@ -16,7 +16,7 @@
             <label class="col-2 col-form-label">Apellido</label>
             <div class="col-8">
 
-                <input class="form-control" type="text" placeholder="Apellido">
+                <input class="form-control" [ngModel]="usuario.apellido" type="text" name="apellido" [class.is-invalid]="apellido.invalid && apellido.touched" placeholder="Apellido" #apellido="ngModel" required minlength="5">
             </div>
         </div>
 
@@ -26,7 +26,7 @@
         <label class="col-2 col-form-label">Correo</label>
         <div class="col-8">
 
-            <input class="form-control" type="email" ngModel name="correo" [class.is-invalid]="correo.invalid && correo.touched" placeholder="Correo electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #correo="ngModel">
+            <input class="form-control" type="email" name="correo" [ngModel]="usuario.correo" [class.is-invalid]="correo.invalid && correo.touched" placeholder="Correo electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #correo="ngModel" required>
         </div>
     </div>
 
