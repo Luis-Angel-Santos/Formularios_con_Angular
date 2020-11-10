@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 export class TemplateComponent implements OnInit {
 
   usuario = {
-    nombre: 'Angel'
+    nombre: ''
   }
 
   constructor() { }
@@ -18,6 +18,7 @@ export class TemplateComponent implements OnInit {
   }
 
 
+  // tslint:disable-next-line: typedef
   guardar(forma: NgForm){
     console.log(forma.value)
   }
