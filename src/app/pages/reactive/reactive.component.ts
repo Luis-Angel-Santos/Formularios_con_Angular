@@ -12,6 +12,7 @@ export class ReactiveComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.crearFormulario();
+    this.cargarDataAlFormulario();
   }
 
   ngOnInit(): void {
@@ -45,6 +46,18 @@ export class ReactiveComponent implements OnInit {
     });
   }
 
+  cargarDataAlFormulario(){
+    this.forma.reset({
+      nombre: 'Angel',
+      apellido: 'Santos',
+      correo: 'angel@gmail.com',
+      direccion: {
+        distrito: 'Tlaxcala',
+        ciudad: 'Apizaco'
+      }
+    });
+  }
+
   guardar(){
     console.log(this.forma);
 
@@ -57,6 +70,10 @@ export class ReactiveComponent implements OnInit {
         }
       });
     }
-  }
+  
+    this.forma.reset({
+      nombre: 'Vacio'
+    });
 
+  }
 }
